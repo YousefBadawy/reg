@@ -1,137 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AUC CourseFlow</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AUC Course Registration</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <div>
-        <p class="eyebrow">AUC Computer Engineering</p>
-        <h1>AUC CourseFlow</h1>
-        <p class="muted">Course registration dashboard for planning semesters, checking prerequisites, and submitting registrations.</p>
-      </div>
 
-      <div class="panel">
-        <label for="semester">Semester</label>
-        <select id="semester">
-          <option>Spring 2026</option>
-          <option>Summer 2026</option>
-          <option>Fall 2026</option>
-        </select>
-
-        <label for="level">Student Level</label>
-        <select id="level">
-          <option>Freshman</option>
-          <option>Sophomore</option>
-          <option>Junior</option>
-          <option>Senior</option>
-        </select>
-
-        <label class="checkbox">
-          <input type="checkbox" checked> Show only open sections
-        </label>
-      </div>
-    </aside>
-
-    <main class="main">
-      <section class="hero card">
-        <div>
-          <p class="eyebrow">Student Course Registration System</p>
-          <h2>Plan your semester with confidence</h2>
-          <p class="muted">Select courses, verify credits, and submit your registration in one clean workflow.</p>
-        </div>
-
-        <div class="stats">
-          <div><strong>18</strong><span>Max Credits</span></div>
-          <div><strong>6</strong><span>Available Courses</span></div>
-          <div><strong>2</strong><span>Selected</span></div>
-        </div>
-      </section>
-
-      <section class="grid">
-        <article class="card course-list">
-          <h3>Available Courses</h3>
-
-          <div class="course">
-            <div>
-              <h4>ECEN 201</h4>
-              <p>Signals and Systems</p>
-            </div>
-            <span>3 Credits</span>
-          </div>
-
-          <div class="course">
-            <div>
-              <h4>ECEN 215</h4>
-              <p>Digital Logic Design</p>
-            </div>
-            <span>4 Credits</span>
-          </div>
-
-          <div class="course">
-            <div>
-              <h4>ECEN 331</h4>
-              <p>Microprocessors</p>
-            </div>
-            <span>3 Credits</span>
-          </div>
-        </article>
-
-        <article class="card form-card">
-          <h3>Registration Form</h3>
-
-          <form>
-            <div class="two-col">
-              <div>
-                <label for="name">Full Name</label>
-                <input id="name" type="text" placeholder="Student name" />
-              </div>
-
-              <div>
-                <label for="id">Student ID</label>
-                <input id="id" type="text" placeholder="AUC ID" />
-              </div>
-            </div>
-
-            <div class="two-col">
-              <div>
-                <label for="email">Email</label>
-                <input id="email" type="email" placeholder="student@aucegypt.edu" />
-              </div>
-
-              <div>
-                <label for="advisor">Advisor</label>
-                <select id="advisor">
-                  <option>Dr. Ahmed</option>
-                  <option>Dr. Sara</option>
-                  <option>Dr. Omar</option>
-                </select>
-              </div>
-            </div>
-
-            <label>Study Mode</label>
-            <div class="radio-row">
-              <label><input type="radio" name="mode" checked> On Campus</label>
-              <label><input type="radio" name="mode"> Online</label>
-            </div>
-
-            <label>Interests</label>
-            <div class="checkbox-grid">
-              <label><input type="checkbox"> AI</label>
-              <label><input type="checkbox"> Embedded Systems</label>
-              <label><input type="checkbox"> Networks</label>
-              <label><input type="checkbox"> Signal Processing</label>
-            </div>
-
-            <button type="submit">Submit Registration</button>
-          </form>
-        </article>
-      </section>
-    </main>
+<div class="app">
+  <div class="header">
+    <div class="auc-badge">AUC</div>
+    <div class="header-text">
+      <div class="title">Course Registration</div>
+      <div class="sub">THE AMERICAN UNIVERSITY IN CAIRO</div>
+    </div>
   </div>
+
+  <div class="prog-wrap">
+    <div class="prog-steps">
+      <div class="prog-step active" id="ps1"></div>
+      <div class="prog-step" id="ps2"></div>
+      <div class="prog-step" id="ps3"></div>
+    </div>
+    <div class="step-label" id="step-label">Step 1 of 3 — Student Information</div>
+  </div>
+
+  <!-- SCREEN 1 -->
+  <div id="s1">
+    <div class="card">
+      <div class="card-title">Student Information</div>
+
+      <div class="row2">
+        <div class="field">
+          <label>First Name *</label>
+          <input id="fname" placeholder="Sara"/>
+          <div class="err" id="e-fname"></div>
+        </div>
+
+        <div class="field">
+          <label>Last Name *</label>
+          <input id="lname" placeholder="Mansour"/>
+          <div class="err" id="e-lname"></div>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label>AUC Student ID *</label>
+          <input id="sid" placeholder="900XXXXXX"/>
+          <div class="err" id="e-sid"></div>
+        </div>
+
+        <div class="field">
+          <label>AUC Email *</label>
+          <input id="email" type="email" placeholder="s.mansour@aucegypt.edu"/>
+          <div class="err" id="e-email"></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Major / Program</label>
+
+        <select id="major">
+          <option value="">Select your major…</option>
+          <option>Computer Science</option>
+          <option>Computer Engineering</option>
+          <option>Information Systems</option>
+          <option>Data Science</option>
+          <option>Business Administration</option>
+          <option>Economics</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="go2()">Continue →</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 2 -->
+  <div id="s2" style="display:none">
+
+    <div class="card">
+      <div class="card-title">Select Courses</div>
+
+      <div class="counter">
+        Choose up to <span>4</span> courses ·
+        <span id="chosen-count">0</span> selected
+      </div>
+
+      <div class="course-grid" id="course-grid">
+
+        <label class="course-item" onclick="toggleCourse(this)">
+          <input type="checkbox" value="CSCE 101"/>
+          <div class="course-info">
+            <div class="code">CSCE 101</div>
+            <div class="name">Introduction to Programming</div>
+          </div>
+        </label>
+
+        <label class="course-item" onclick="toggleCourse(this)">
+          <input type="checkbox" value="CSCE 201"/>
+          <div class="course-info">
+            <div class="code">CSCE 201</div>
+            <div class="name">Data Structures</div>
+          </div>
+        </label>
+
+      </div>
+
+      <div class="err" id="e-courses"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-ghost" onclick="back1()">← Back</button>
+      <button class="btn btn-primary" onclick="go3()">Review →</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3 -->
+  <div id="s3" style="display:none">
+
+    <div class="card">
+      <div class="card-title">Review & Confirm</div>
+      <div id="review-rows"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-ghost" onclick="back2()">← Edit</button>
+      <button class="btn btn-primary" onclick="submitForm()">Submit</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
