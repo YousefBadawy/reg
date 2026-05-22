@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AUC CourseFlow</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div>
+        <p class="eyebrow">AUC Computer Engineering</p>
+        <h1>AUC CourseFlow</h1>
+        <p class="muted">Course registration dashboard for planning semesters, checking prerequisites, and submitting registrations.</p>
+      </div>
+
+      <div class="panel">
+        <label for="semester">Semester</label>
+        <select id="semester">
+          <option>Spring 2026</option>
+          <option>Summer 2026</option>
+          <option>Fall 2026</option>
+        </select>
+
+        <label for="level">Student Level</label>
+        <select id="level">
+          <option>Freshman</option>
+          <option>Sophomore</option>
+          <option>Junior</option>
+          <option>Senior</option>
+        </select>
+
+        <label class="checkbox">
+          <input type="checkbox" checked> Show only open sections
+        </label>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="hero card">
+        <div>
+          <p class="eyebrow">Student Course Registration System</p>
+          <h2>Plan your semester with confidence</h2>
+          <p class="muted">Select courses, verify credits, and submit your registration in one clean workflow.</p>
+        </div>
+
+        <div class="stats">
+          <div><strong>18</strong><span>Max Credits</span></div>
+          <div><strong>6</strong><span>Available Courses</span></div>
+          <div><strong>2</strong><span>Selected</span></div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card course-list">
+          <h3>Available Courses</h3>
+
+          <div class="course">
+            <div>
+              <h4>ECEN 201</h4>
+              <p>Signals and Systems</p>
+            </div>
+            <span>3 Credits</span>
+          </div>
+
+          <div class="course">
+            <div>
+              <h4>ECEN 215</h4>
+              <p>Digital Logic Design</p>
+            </div>
+            <span>4 Credits</span>
+          </div>
+
+          <div class="course">
+            <div>
+              <h4>ECEN 331</h4>
+              <p>Microprocessors</p>
+            </div>
+            <span>3 Credits</span>
+          </div>
+        </article>
+
+        <article class="card form-card">
+          <h3>Registration Form</h3>
+
+          <form>
+            <div class="two-col">
+              <div>
+                <label for="name">Full Name</label>
+                <input id="name" type="text" placeholder="Student name" />
+              </div>
+
+              <div>
+                <label for="id">Student ID</label>
+                <input id="id" type="text" placeholder="AUC ID" />
+              </div>
+            </div>
+
+            <div class="two-col">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="student@aucegypt.edu" />
+              </div>
+
+              <div>
+                <label for="advisor">Advisor</label>
+                <select id="advisor">
+                  <option>Dr. Ahmed</option>
+                  <option>Dr. Sara</option>
+                  <option>Dr. Omar</option>
+                </select>
+              </div>
+            </div>
+
+            <label>Study Mode</label>
+            <div class="radio-row">
+              <label><input type="radio" name="mode" checked> On Campus</label>
+              <label><input type="radio" name="mode"> Online</label>
+            </div>
+
+            <label>Interests</label>
+            <div class="checkbox-grid">
+              <label><input type="checkbox"> AI</label>
+              <label><input type="checkbox"> Embedded Systems</label>
+              <label><input type="checkbox"> Networks</label>
+              <label><input type="checkbox"> Signal Processing</label>
+            </div>
+
+            <button type="submit">Submit Registration</button>
+          </form>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
